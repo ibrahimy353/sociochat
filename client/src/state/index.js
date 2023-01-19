@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const initialState ={
+const initialState ={//this data will be used in the entire app as it can be grabed from anywhere and its used in determining the light and dark mode
     mode: 'light',
     user: null,
     token: null,
@@ -12,7 +12,7 @@ export const authSlice = createSlice({
     initialState,
     reducers:{
         setMode: (state) =>{
-            state.mode = state.mode === "light"? "dark" : "light";    
+            state.mode = state.mode === "light"? "dark" : "light";   //function that modify the global state from light to dark and viceversa
         },
 
         setLogin: (state, action) => {
@@ -31,6 +31,21 @@ export const authSlice = createSlice({
             } else {
                 console.erro("user friends non-existent :(")
             }
+        },
+        setPosts: (state, action) =>{
+            state.posts = action.payload.posts;
+        },
+
+        setPost: (state, action) =>{
+            const updatedPosts = state.posts.map((post) =>{
+                if ( post._id === action.payload.post_id) return action.payload.post;
+                return post;
+            });
+            state.posts = updatedPosts;
         }
+        
     }
 })  
+
+export const {setMode, setLogin, setLogout, setFriends, setPosts, setPost} = authSlice.actions;
+export default authSlice.reducer;
