@@ -4,3 +4,5 @@
     },
     "include": ["src"]
 }
+// jsconfig  allows the user to return back to same newfeed or refresh the news feed with they log back in into the app
+
