@@ -56,7 +56,7 @@ const initialValueRegister ={
     const isRegister = pageType === "register";
 
     const handleFormSubmit = async (values, onsubmitProps) => {};
-
+    // this allows us to send form info with image
     return (
         <Formik
         onSubmit={handleFormSubmit}
