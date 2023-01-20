@@ -155,10 +155,7 @@ const initialValueRegister ={
                                                 <Typography>{value.picture.name}</Typography>
                                                 <EditOutlinedIcon/>
                                             </FlexBetween>
-                                          )  }
-                                        )}
-
-
+                                          ) }
                                     </Box>
                                 )}
 
