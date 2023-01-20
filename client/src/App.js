@@ -22,7 +22,8 @@ function App() {
       <Route path="/" element= {<LoginPage/>} />
       {/* sets the path that user will log into*/}  
       <Route path="/home" element= {<HomePage/>} />
-      <Route path="/profile/:userId" element= {<ProfilePage/>} />
+      <Route path="/profile/:userId" 
+      element= {<ProfilePage/>} />
     </Routes>
     </ThemeProvider>
     </BrowserRouter>
