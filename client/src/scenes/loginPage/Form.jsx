@@ -17,8 +17,6 @@ import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
 
 const registerSchema = yup.object().shape({
-   //values found in the schema when the inputs in an incorrect 
-    //value the feedback would be error bt if the user leaves the registration blank it will give back required
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
   email: yup.string().email("invalid email").required("required"),
@@ -61,11 +59,11 @@ const Form = () => {
     // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {
-      formData.append(value, values[value]);//allows us to send an image through the form data
+      formData.append(value, values[value]);
     }
     formData.append("picturePath", values.picture.name);
 
-    const savedUserResponse = await fetch(//this llows us to save what is returned from the backend
+    const savedUserResponse = await fetch(
       "http://localhost:3001/auth/register",
       {
         method: "POST",
@@ -183,7 +181,7 @@ const Form = () => {
                 >
                   <Dropzone
                     acceptedFiles=".jpg,.jpeg,.png"
-                    multiple={false} //means that only one image is accepted at most in login
+                    multiple={false}
                     onDrop={(acceptedFiles) =>
                       setFieldValue("picture", acceptedFiles[0])
                     }

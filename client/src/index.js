@@ -14,7 +14,7 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";//allows us to save all the info above in the local storage the only way to get rid of it is by clearing the cache.
+} from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { PersistGate } from "redux-persist/integration/react";
 

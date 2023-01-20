@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {//function that modify the global state from light to dark and viceversa
+const initialState = {
   mode: "light",
   user: null,
   token: null,
