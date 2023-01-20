@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import {setLogin} from "state";
 import Dropzone from "react-dropzone";
 import { Email } from "@mui/icons-material";
+import { color, margin } from "@mui/system";
 
 const registerSchema = yup.object().shape({
     //values found in the schema when the inputs in an incorrect 
@@ -163,7 +164,45 @@ const initialValueRegister ={
                         </Box>
                         </>
                     )}
+                    {/* section for login incase you havent registered */}
+                    <TextField
+                        label= "Email"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={value.email}
+                        name="firstName"
+                        error= {"Boolean(touched.email) && Boolean(erros.email)"}
+                        helperText = {touched.email && errors.email}
+                        sx={{gridColumn: "span 2"}}
+                        />
+
+                    <TextField
+                        label= "Password"
+                        type= "pasword"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={value.password}
+                        name="firstName"
+                        error= {"Boolean(touched.password) && Boolean(erros.password)"}
+                        helperText = {touched.password && errors.password}
+                        sx={{gridColumn: "span 2"}}
+                        />
                 </Box>
+                {/* Button section */}
+                <Button
+                    fullWidth
+                    type="submit"
+                    sx={{
+                        margin:"2rem 0",
+                        p: "1rem",
+                        backgroundColor: palatte.primary.main,
+                        color: palette.background.alt,
+                        "&: hover": {color: palatte.primary.main},
+                    }}
+                    >
+
+                    </Button>
+
                 </form>
             )}
         </Formik>
