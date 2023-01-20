@@ -17,6 +17,8 @@ import Dropzone from "react-dropzone";
 import { Email } from "@mui/icons-material";
 
 const registerSchema = yup.object().shape({
+    //values found in the schema when the inputs in an incorrect 
+    //value the feedback would be error bt if the user leaves the registration blank it will give back required.
     firstName: yup.string().required("required"),
     lastName: yup.string().required("required"),
     email: yup.string().email("invalid email").required("required"),
@@ -30,7 +32,6 @@ const loginSchema = yup.object().shape({
     email: yup.string().email("invalid email").required("required"),
     password: yup.string().required("required"),
 });
-
 const initialValueRegister ={
     firstName: "",
     lastName: "",
