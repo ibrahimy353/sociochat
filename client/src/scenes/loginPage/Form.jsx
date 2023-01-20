@@ -78,13 +78,95 @@ const initialValueRegister ={
                     <Box 
                     display="grid"
                     gap ="30px"
-                    gridTemplateColums= "repeat (4, minmax(0, 1fr))"
+                    gridTemplateColums= "repeat (4, minmax(0, 1fr))" //this means that we are spliting the grind into 4 section
                     sx= {{
                         "& > div": {gridAutoColumn: isNonMobile ? undefined : "span 4"},
 
-                    }}>
+                    }}
+                    > 
+                    {isRegister && (
+                        <>
+                        <TextField
+                        label= "Fist Name"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={value.firstName}
+                        name="firstName"
+                        error= {"Boolean(touched.firstName) && Boolean(erros.fistName)"}
+                        helperText = {touched.firstName && errors.firstName}
+                        sx={{gridColumn: "span 2"}}
+                        />
+                        <TextField
+                        label= "Last Name"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={value.lasttName}
+                        name="lastName"
+                        error= {"Boolean(touched.lastName) && Boolean(erros.lastName)"}
+                        helperText = {touched.lasName && errors.lastName}
+                        sx={{gridColumn: "span 2"}}
+                        />
+                        
+                        <TextField
+                        label= "Location"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={value.location}
+                        name="firstName"
+                        error= {"Boolean(touched.location) && Boolean(erros.location)"}
+                        helperText = {touched.location && errors.location}
+                        sx={{gridColumn: "span 4"}}
+                        />
+                        
+                        <TextField
+                        label= "Occupation"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        value={value.occupation}
+                        name="firstName"
+                        error= {"Boolean(touched.occupation) && Boolean(erros.occupation)"}
+                        helperText = {touched.occupation && errors.occupation}
+                        sx={{gridColumn: "span 4"}}
+                        />
+                    <Box 
+                        gridColumn= "span 4"
+                        border={`1px solid ${palatte.neutral.medium}`}
+                        borderRadius ="5PX"
+                        p="1rem"
+                        >
+                            <Dropzone
+                              acceptedFiles =".jpg, .jpg, .png"
+                              multiple= {false} //means that only one image is accepted at most in login
+                              onDrop= {(acceptedFiles) =>
+                                setFieldValue ("picture", acceptedFiles [0])}
+                            >
+                                {({getRootProps, getInputProps}) =>(
+                                    <Box
+                                        {...getRootProps()}
+                                        border= {`2px dashed ${palette.primary.main}`}
+                                        p="1rem"
+                                        sx={{"&:hover": {cursor: "pointer"}}}
+                                    >
+                                        <input{...getInputProps}/>
+                                        {!value.picture?(
+                                          <p>Add Picture Here</p>
+                                          ):(
+                                            <FlexBetween>
+                                                <Typography>{value.picture.name}</Typography>
+                                                <EditOutlinedIcon/>
+                                            </FlexBetween>
+                                          )  }
+                                        )}
 
-                    </Box>
+
+                                    </Box>
+                                )}
+
+                            </Dropzone>
+                        </Box>
+                        </>
+                    )}
+                </Box>
                 </form>
             )}
         </Formik>
