@@ -24,7 +24,7 @@ const UserWidget = ({ userId, picturePath }) => {
   const getUser = async () => {
     const response = await fetch(`http://localhost:3001/users/${userId}`, {
       method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}` },//gets to link with the server side middlewares/auth.js file to grab the  authorization token and verify it in auth.js file
     });
     const data = await response.json();
     setUser(data);
