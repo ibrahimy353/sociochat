@@ -1,4 +1,4 @@
-import { Box, useMediaQuery } from "@mui/material";
+ import { Box, useMediaQuery } from "@mui/material";
 import { useSelector } from "react-redux";
 import Navbar from "scenes/navbar";
 import UserWidget from "scenes/widgets/UserWidget";
@@ -25,7 +25,7 @@ const HomePage = () => {
           <UserWidget userId={_id} picturePath={picturePath} />
         </Box>
         <Box
-          flexBasis={isNonMobileScreens ? "42%" : undefined}
+          flexBasis={isNonMobileScreens ? "42%" : undefined} //the friends list will only show on desktop profiles
           mt={isNonMobileScreens ? undefined : "2rem"}
         >
           <MyPostWidget picturePath={picturePath} />
