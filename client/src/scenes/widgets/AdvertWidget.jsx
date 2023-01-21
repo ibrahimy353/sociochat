@@ -28,8 +28,7 @@ const AdvertWidget = () => {
         <Typography color={medium}>twilighttreks.com</Typography>
       </FlexBetween>
       <Typography color={medium} m="0.5rem 0">
-        Your pathway to stunning and immaculate beauty and made sure your skin
-        is exfoliating skin and shining like light.
+        Your pathway to stunning and immaculate trips that nature and quenchs the soul.
       </Typography>
     </WidgetWrapper>
   );
