@@ -46,14 +46,14 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`http://localhost:3001/posts`, {
-      method: "POST",
+    const response = await fetch(`http://localhost:3001/posts`, {// this gets to send the post to the backend
+      method: "POST", 
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
     });
     const posts = await response.json();
-    dispatch(setPosts({ posts }));
-    setImage(null);
+    dispatch(setPosts({ posts }));//this enables us to keep a list of post 
+    setImage(null);//gets to reset all the state of the site once we make an api call to backend
     setPost("");
   };
 
