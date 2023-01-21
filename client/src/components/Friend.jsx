@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => { //takes the 
 
   const patchFriend = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${_id}/${friendId}`,
+      `http://localhost:3001/users/${_id}/${friendId}`, //to remove the friend from friend list we pass it through the user if and friendId 
       {
         method: "PATCH",
         headers: {
@@ -43,7 +43,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => { //takes the 
         <Box
           onClick={() => {
             navigate(`/profile/${friendId}`);
-            navigate(0);
+            navigate(0);//enables the user to pass through a friends page to see another friends profile through refreshing the cache
           }}
         >
           <Typography
