@@ -41,7 +41,7 @@ const PostWidget = ({
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ userId: loggedInUserId }),
+      body: JSON.stringify({ userId: loggedInUserId }),//enables the backend to keep track whether the current user has liked the post or not
     });
     const updatedPost = await response.json();
     dispatch(setPost({ post: updatedPost }));
@@ -67,7 +67,7 @@ const PostWidget = ({
           src={`http://localhost:3001/assets/${picturePath}`}
         />
       )}
-      <FlexBetween mt="0.25rem">
+      <FlexBetween mt="0.25rem">  
         <FlexBetween gap="1rem">
           <FlexBetween gap="0.3rem">
             <IconButton onClick={patchLike}>
