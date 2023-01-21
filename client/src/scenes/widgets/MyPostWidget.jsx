@@ -77,7 +77,7 @@ const MyPostWidget = ({ picturePath }) => {
         <Box
           border={`1px solid ${medium}`}
           borderRadius="5px"
-          mt="1rem"
+          mt="1rem"//margin top
           p="1rem"
         >
           <Dropzone
@@ -105,7 +105,7 @@ const MyPostWidget = ({ picturePath }) => {
                   )}
                 </Box>
                 {image && (
-                  <IconButton
+                  <IconButton //trash icon incase the user wants to remove the image
                     onClick={() => setImage(null)}
                     sx={{ width: "15%" }}
                   >
