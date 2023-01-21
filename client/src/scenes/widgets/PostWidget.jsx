@@ -79,11 +79,13 @@ const PostWidget = ({
               )}
             </IconButton>
             <Typography>{likeCount}</Typography>
+            {/* shows the number of likes on a post */}
           </FlexBetween>
 
           <FlexBetween gap="0.3rem">
             <IconButton onClick={() => setIsComments(!isComments)}>
               <ChatBubbleOutlineOutlined />
+              {/* show the number of comments */}
             </IconButton>
             <Typography>{comments.length}</Typography>
           </FlexBetween>
@@ -97,6 +99,7 @@ const PostWidget = ({
         <Box mt="0.5rem">
           {comments.map((comment, i) => (
             <Box key={`${name}-${i}`}>
+              {/* the i index allows us to have unique comment */}
               <Divider />
               <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
                 {comment}
