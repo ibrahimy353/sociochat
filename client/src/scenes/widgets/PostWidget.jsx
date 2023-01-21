@@ -67,7 +67,8 @@ const PostWidget = ({
           src={`http://localhost:3001/assets/${picturePath}`}
         />
       )}
-      <FlexBetween mt="0.25rem">  
+      <FlexBetween mt="0.25rem"> 
+      {/* this gets to show whether the icon button is liked or not by showing the primary color */}
         <FlexBetween gap="1rem">
           <FlexBetween gap="0.3rem">
             <IconButton onClick={patchLike}>
