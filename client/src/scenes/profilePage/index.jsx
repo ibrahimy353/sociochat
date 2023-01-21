@@ -27,7 +27,7 @@ const ProfilePage = () => {
     getUser();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  if (!user) return null;
+  if (!user) return null;//if user doesnt exist return null instead of error
 
   return (
     <Box>
