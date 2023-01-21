@@ -22,7 +22,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
       `http://localhost:3001/posts/${userId}/posts`,
       {
         method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${token}` },//Bearer validates the api call
       }
     );
     const data = await response.json();
