@@ -32,7 +32,7 @@ const MyPostWidget = ({ picturePath }) => {
   const [post, setPost] = useState("");
   const { palette } = useTheme();
   const { _id } = useSelector((state) => state.user);
-  const token = useSelector((state) => state.token);
+  const token = useSelector((state) => state.token);//allows us to send details in the back end to enable us to know the post being posted
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const mediumMain = palette.neutral.mediumMain;
   const medium = palette.neutral.medium;
@@ -42,7 +42,7 @@ const MyPostWidget = ({ picturePath }) => {
     formData.append("userId", _id);
     formData.append("description", post);
     if (image) {
-      formData.append("picture", image);
+      formData.append("picture", image);//grabs the picture key from index.js in server folder and showcases it on frontend
       formData.append("picturePath", image.name);
     }
 
