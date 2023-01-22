@@ -31,7 +31,7 @@ export const users = [
   {
     _id: userIds[1],
     firstName: "Steve",
-    lastName: "Ralph",
+    lastName: "jobs",
     email: "thataaa@gmail.com",
     password: "$!FEAS@!O)_IDJda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p3.jpeg",
