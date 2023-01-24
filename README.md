@@ -1,2 +1,2 @@
-# Mern-stack-chat-app
- 
+# SocioChat.
+This is a full stack web application that utilizes MERN programming languages to build a social media site that allows the user to register, login in and create an avator for their profile then get to post on the media.   
