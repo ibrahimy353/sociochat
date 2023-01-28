@@ -182,7 +182,7 @@ export const posts = [
     ]),
     comments: [
       "one more random comment",
-      "and another random comment",
+      "and another random comments",
       "no more random comments",
       "I lied, one more random comment",
     ],
