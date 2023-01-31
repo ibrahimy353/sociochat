@@ -168,7 +168,7 @@ export const posts = [
     _id: new mongoose.Types.ObjectId(),
     userId: userIds[3],
     firstName: "Whatcha",
-    lastName: "Doing",
+    lastName: "Guy",
     location: "Korea, CA",
     description:
       "Another really long random description.",
